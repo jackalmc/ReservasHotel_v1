@@ -8,7 +8,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static org.iesalandalus.programacion.reservashotel.MainApp.huespedes;
 
 public class Consola {
 

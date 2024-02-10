@@ -7,6 +7,7 @@ public enum Opcion {
     INSERTAR_HABITACION("Insertar Habitación"),BUSCAR_HABITACION("Buscar Habitación"), BORRAR_HABITACION("Borrar Habitación"), MOSTRAR_HABITACIONES("Mostrar Habitaciones"),
     INSERTAR_RESERVA("Insertar Reserva"),ANULAR_RESERVA("Anular Reserva"),MOSTRAR_RESERVAS("Mostrar Reserva"),
     CONSULTAR_DISPONIBILIDAD("Consultar Disponibilidad"),
+    REALIZAR_CHECKIN("Realizar CheckIn"), REALIZAR_CHECKOUT("Realizar CheckOut"),
     DEBUG("[DEBUG] Insertar datos");
 
     private String mensajeAMostrar;

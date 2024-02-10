@@ -92,7 +92,7 @@ public class Consola {
 
         while(!mensaje.matches(erFechaHora)){
 
-            System.out.println("Introduzca una fecha válida (dd/MM/yyyy hh:mm:ss): ");
+            System.out.println("Introduzca una fecha válida (dd/MM/yyyy HH:mm:ss): ");
             mensaje = Entrada.cadena().trim();
 
         }

@@ -13,20 +13,20 @@ import java.time.LocalDateTime;
 
 public class Modelo {
 
-    public final static int  CAPACIDAD=6;
-    public static Habitaciones habitaciones;
-    public static Reservas reservas;
+    private final static int  CAPACIDAD=6;
+    private static Habitaciones habitaciones;
+    private static Reservas reservas;
     public static Huespedes huespedes;
 
 
     public Modelo(){
-
-    }
-
-    public void comenzar(){
         habitaciones = new Habitaciones(CAPACIDAD);
         reservas = new Reservas(CAPACIDAD);
         huespedes = new Huespedes(CAPACIDAD);
+    }
+
+    public void comenzar(){
+
     }
 
     public void terminar(){

@@ -445,7 +445,7 @@ public class Vista {
 
             try{
 
-                controlador.realizarCheckin(lista[0], fechacheckin);
+                controlador.realizarCheckin(controlador.buscar(lista[0]), fechacheckin);
                 System.out.println("*** CheckIn Realizado ***");
 
             }catch(IllegalArgumentException|NullPointerException e){
@@ -470,7 +470,7 @@ public class Vista {
 
             try{
 
-                controlador.realizarCheckin(lista[eleccion], fechacheckin);
+                controlador.realizarCheckin(controlador.buscar(lista[eleccion]), fechacheckin);
                 System.out.println("*** CheckIn Realizado ***");
 
             }catch(IllegalArgumentException|NullPointerException e){
@@ -502,7 +502,7 @@ public class Vista {
 
             try{
 
-                controlador.realizarCheckout(lista[0], fechacheckout);
+                controlador.realizarCheckout(controlador.buscar(lista[0]), fechacheckout);
                 System.out.println("*** CheckOut Realizado ***");
 
             }catch(IllegalArgumentException|NullPointerException e){
@@ -527,7 +527,7 @@ public class Vista {
 
             try{
 
-                controlador.realizarCheckout(lista[eleccion], fechacheckout);
+                controlador.realizarCheckout(controlador.buscar(lista[eleccion]), fechacheckout);
                 System.out.println("*** CheckOut Realizado ***");
 
             }catch(IllegalArgumentException|NullPointerException e){

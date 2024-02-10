@@ -10,7 +10,7 @@ public class Reserva {
     public static final int MAX_NUMERO_MESES_RESERVA = 6;
     public static final int MAX_HORAS_POSTERIOR_CHECKOUT = 12;
     public static final String FORMATO_FECHA_RESERVA = "dd/MM/yyyy";
-    public static final String FORMATO_FECHA_HORA_RESERVA = "dd/MM/yyyy hh:mm:ss";
+    public static final String FORMATO_FECHA_HORA_RESERVA = "dd/MM/yyyy HH:mm:ss";
     private Huesped huesped;
     private Habitacion habitacion;
     private Regimen regimen;

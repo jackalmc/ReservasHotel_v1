@@ -15,10 +15,6 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public class MainApp {
-    public final static int  CAPACIDAD=6;
-    private static Habitaciones habitaciones = new Habitaciones(CAPACIDAD);
-    private static Reservas reservas = new Reservas(CAPACIDAD);;
-    public static Huespedes huespedes = new Huespedes(CAPACIDAD);
     private static boolean salir = false;
 
     private static void ejecutarOpcion(Opcion opcion){

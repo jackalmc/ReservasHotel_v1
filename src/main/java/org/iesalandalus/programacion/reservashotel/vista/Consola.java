@@ -4,9 +4,12 @@ import org.iesalandalus.programacion.reservashotel.modelo.dominio.*;
 import org.iesalandalus.programacion.utilidades.Entrada;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import static org.iesalandalus.programacion.reservashotel.modelo.Modelo.huespedes;
 
 
 public class Consola {
@@ -82,7 +85,7 @@ public class Consola {
         return LocalDate.parse(mensaje, formatoFecha);
     }
 
-    public static LocalDate leerFechaHora(String mensaje){
+    public static LocalDateTime leerFechaHora(String mensaje){
 
         String erFechaHora = "[0-3][0-9]/[0-1][0-9]/[1-2][0-9]{3} [0-2][\\d]:[0-5][\\d]:[0-5][\\d]";
         DateTimeFormatter formatoFechaHora = DateTimeFormatter.ofPattern(Reserva.FORMATO_FECHA_HORA_RESERVA);
@@ -94,7 +97,7 @@ public class Consola {
 
         }
 
-        return LocalDate.parse(mensaje, formatoFechaHora);
+        return LocalDateTime.parse(mensaje, formatoFechaHora);
     }
 
     public static Habitacion leerHabitacion(){
@@ -172,6 +175,7 @@ public class Consola {
     }
 
     public static Reserva leerReserva(){
+        //He tenido que hacer huéspedes como público para poder hacerlo así
 
         Huesped huesped;
         Habitacion habitacion;

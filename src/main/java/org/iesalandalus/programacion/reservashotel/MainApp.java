@@ -1,10 +1,10 @@
 package org.iesalandalus.programacion.reservashotel;
 
 
-import org.iesalandalus.programacion.reservashotel.dominio.*;
-import org.iesalandalus.programacion.reservashotel.negocio.Habitaciones;
-import org.iesalandalus.programacion.reservashotel.negocio.Huespedes;
-import org.iesalandalus.programacion.reservashotel.negocio.Reservas;
+import org.iesalandalus.programacion.reservashotel.modelo.dominio.*;
+import org.iesalandalus.programacion.reservashotel.modelo.negocio.Habitaciones;
+import org.iesalandalus.programacion.reservashotel.modelo.negocio.Huespedes;
+import org.iesalandalus.programacion.reservashotel.modelo.negocio.Reservas;
 import org.iesalandalus.programacion.reservashotel.vista.Consola;
 import org.iesalandalus.programacion.reservashotel.vista.Opcion;
 import org.iesalandalus.programacion.utilidades.Entrada;
@@ -80,7 +80,7 @@ public class MainApp {
     }
 
     private static void mostrarHuespedes(){
-        Huesped [] lista;
+        Huesped[] lista;
         lista = huespedes.get();
         System.out.println(" ");
         System.out.println("*****");
@@ -131,7 +131,7 @@ public class MainApp {
     }
 
     private static void mostrarHabitaciones(){
-        Habitacion [] lista;
+        Habitacion[] lista;
         lista = habitaciones.get();
         System.out.println(" ");
         System.out.println("*****");

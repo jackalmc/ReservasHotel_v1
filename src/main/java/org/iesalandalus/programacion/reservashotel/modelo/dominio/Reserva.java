@@ -1,4 +1,4 @@
-package org.iesalandalus.programacion.reservashotel.dominio;
+package org.iesalandalus.programacion.reservashotel.modelo.dominio;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -8,7 +8,7 @@ import java.util.Objects;
 
 public class Reserva {
     public static final int MAX_NUMERO_MESES_RESERVA = 6;
-    private static final int MAX_HORAS_POSTERIOR_CHECKOUT = 12;
+    public static final int MAX_HORAS_POSTERIOR_CHECKOUT = 12;
     public static final String FORMATO_FECHA_RESERVA = "dd/MM/yyyy";
     public static final String FORMATO_FECHA_HORA_RESERVA = "dd/MM/yyyy hh:mm:ss";
     private Huesped huesped;

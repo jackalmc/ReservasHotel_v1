@@ -1,13 +1,14 @@
-package org.iesalandalus.programacion.reservashotel.negocio;
+package org.iesalandalus.programacion.reservashotel.modelo.negocio;
 
-import org.iesalandalus.programacion.reservashotel.dominio.Habitacion;
-import org.iesalandalus.programacion.reservashotel.dominio.Huesped;
-import org.iesalandalus.programacion.reservashotel.dominio.Reserva;
-import org.iesalandalus.programacion.reservashotel.dominio.TipoHabitacion;
+import org.iesalandalus.programacion.reservashotel.modelo.dominio.Habitacion;
+import org.iesalandalus.programacion.reservashotel.modelo.dominio.Huesped;
+import org.iesalandalus.programacion.reservashotel.modelo.dominio.Reserva;
+import org.iesalandalus.programacion.reservashotel.modelo.dominio.TipoHabitacion;
 
 import javax.naming.OperationNotSupportedException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 
 public class Reservas {
     private int capacidad;
@@ -175,5 +176,32 @@ public class Reservas {
             }
         }
         return copiaEspecial;
+    }
+
+    public void realizarCheckin(Reserva reserva, LocalDateTime fecha){
+        if (reserva == null)
+            throw new NullPointerException("La reserva es nula (Checkin)");
+        if (fecha == null)
+            throw new NullPointerException("La fecha es nula (Checkin)");
+        if (fecha.isBefore(reserva.getFechaInicioReserva().atStartOfDay()))
+            throw new IllegalArgumentException("El CheckIn no puede realizarse antes de la fecha de inicio de la reserva");
+        if (fecha.isAfter(reserva.getFechaFinReserva().atStartOfDay()))
+            throw new IllegalArgumentException("No puede hacerse un CheckIn después de la fecha fin de reserva");
+
+
+        reserva.setCheckIn(fecha);
+    }
+
+    public void realizarCheckout(Reserva reserva, LocalDateTime fecha){
+        if (reserva == null)
+            throw new NullPointerException("La reserva es nula (CheckOut)");
+        if (fecha == null)
+            throw new NullPointerException("La fecha es nula (CheckOut)");
+        if (fecha.isBefore(reserva.getCheckIn()))
+            throw new IllegalArgumentException("No se puede hacer un CheckOut antes de la fecha del CheckIn");
+        if (fecha.isAfter(reserva.getFechaFinReserva().atStartOfDay().plusHours(Reserva.MAX_HORAS_POSTERIOR_CHECKOUT)))
+            throw new IllegalArgumentException("El Checkout no puede hacerse después del periodo máximo permitido");
+
+        reserva.setCheckOut(fecha);
     }
 }

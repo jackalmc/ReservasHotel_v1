@@ -1,6 +1,6 @@
 package org.iesalandalus.programacion.reservashotel.vista;
 
-import org.iesalandalus.programacion.reservashotel.dominio.*;
+import org.iesalandalus.programacion.reservashotel.modelo.dominio.*;
 import org.iesalandalus.programacion.utilidades.Entrada;
 
 import java.time.LocalDate;
@@ -60,7 +60,7 @@ public class Consola {
     public static Huesped getHuespedPorDni(){
 
         System.out.print("Introduzca DNI: ");
-        String dni = Entrada.cadena();
+        String dni = Entrada.cadena().toUpperCase();
 
 
         return new Huesped("Soy Un Dummy", dni, "ningun_sitio@ahi.ong","950000000", LocalDate.of(1990, 9, 9));
@@ -81,6 +81,21 @@ public class Consola {
         }
 
         return LocalDate.parse(mensaje, formatoFecha);
+    }
+
+    public static LocalDate leerFechaHora(String mensaje){
+
+        String erFechaHora = "[0-3][0-9]/[0-1][0-9]/[1-2][0-9]{3} [0-2][\\d]:[0-5][\\d]:[0-5][\\d]";
+        DateTimeFormatter formatoFechaHora = DateTimeFormatter.ofPattern(Reserva.FORMATO_FECHA_HORA_RESERVA);
+
+        while(!mensaje.matches(erFechaHora)){
+
+            System.out.println("Introduzca una fecha válida (dd/MM/yyyy hh:mm:ss): ");
+            mensaje = Entrada.cadena();
+
+        }
+
+        return LocalDate.parse(mensaje, formatoFechaHora);
     }
 
     public static Habitacion leerHabitacion(){
